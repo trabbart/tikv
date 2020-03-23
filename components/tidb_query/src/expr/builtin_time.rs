@@ -69,7 +69,7 @@ impl ScalarFunc {
     #[inline]
     pub fn time_to_sec(&self, ctx: &mut EvalContext, row: &[Datum]) -> Result<Option<i64>> {
         let dur = try_opt!(self.children[0].eval_duration(ctx, row));
-		Ok(Some(i64::from(dur.to_secs())))
+        Ok(Some(i64::from(dur.to_secs())))
     }
 
     #[inline]
