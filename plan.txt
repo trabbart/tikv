@@ -1,0 +1,8 @@
+Plan rozwiązania “issue” 6959.
+
+-Zapoznanie się z dokumentacją oraz implementacją funkcji TRIM() w bazie danych MySQL.
+-Zapoznanie się z implementacją funkcji Trim3Args w TiDB.
+-Zapoznanie się z zawartością plików builtin_string.rs i impl_string.rs zwracjąc szczególną uwagę na kody podobnych funcji, bądź funkcji, które mogą się okzazać przydatne w implementacji. 
+-Napisanie unit testów do dodawanej funkcjonalności.
+-Napisanie kodu funkcji – zgodnie z znalezionym opisem funkcji TRIM w bazie danych MySQL funkcja zwraca ciąg znaków po usunięciu wszystkich prefiksów lub sufiksów z podanego ciągu znaków. Funkcja działa inaczej w zależności od liczby podanych argumentów. 
+-przetestowanie funkcjonalności, poprzez polecenia cargo check, cargo test, cargo fmt.
