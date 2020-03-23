@@ -756,14 +756,14 @@ mod tests {
     #[test]
     fn test_time_to_sec() {
         // test time_to_sec
-        let cases: Vec<(&str, i64)> = vec![
-            ("31 11:30:45", 2719845),
-            ("11:30:45.123345", 41445),
-            ("-11:30:45.9233456", -41445),
-            ("272:59:59.94", 982799),
+        let cases: Vec<(&str, i8, i64)> = vec![
+            ("31 11:30:45", 0, 2719845),
+            ("11:30:45.123345", 3, 41445),
+            ("-11:30:45.9233456", 0, -41445),
+            ("272:59:59.94", 0, 982799),
         ];
         let mut ctx = EvalContext::default();
-        for (arg, s) in cases {
+        for (arg, fsp, s) in cases {
             let d = Datum::Dur(Duration::parse(&mut ctx, arg.as_bytes(), fsp).unwrap());
             test_ok_case_one_arg(&mut ctx, ScalarFuncSig::TimeToSec, d.clone(), Datum::I64(s));
         }
